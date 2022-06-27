@@ -1,0 +1,9 @@
+business:
+	mail:
+		account_verification:
+			title: Verificar sua continha
+			subject: "Vamos verificar sua continha?"
+			text: "só pra teste, {{ name }}"
+			text1: "É incrível te ter aqui"
+			text2: "Mas precisamos verificar seu email"
+			text3: "Confirmar minha conta"

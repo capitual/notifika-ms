@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    container_name: postgres-capitual
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "capitual_payment_service"
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis
+    container_name: redis-capitual
+    restart: always
+    ports:
+      - "6379:6379"
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: microservice-capitual
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/app
+    depends_on:
+      - db
+      - redis
+  rabbitmq3:
+    container_name: "rabbitmq"
+    image: rabbitmq:3.8-management-alpine
+    environment:
+        - RABBITMQ_DEFAULT_USER=admin
+        - RABBITMQ_DEFAULT_PASS=admin
+    ports:
+        # AMQP protocol port
+        - '5672:5672'
+        # HTTP management UI
+        - '15672:15672'
+

@@ -1,0 +1,21 @@
+<style>
+.message-content {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 21px;
+}
+</style>
+
+<div class="message-content">
+  <p>Olá, {{ name }}</p>
+  <p> {{ i18n 'business.mail.account_verification.text1' }} </p>
+  <p> {{ i18n 'business.mail.account_verification.text2' }} </p>
+  <p>
+    <a href="#"> {{ i18n 'business.mail.account_verification.text3' }}</a>
+  </p>
+  <p> {{ i18n 'business.mail.account_verification.text' }}</p>
+  <p> Obrigado!<br />
+    <strong> {{ mailOpts.year }}, Capitual </strong>
+  </p>
+</div>
