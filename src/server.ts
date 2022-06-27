@@ -4,8 +4,11 @@ const server = express()
 import RabbitMQServer from './messages/server'
 import mongoose from "mongoose"
 import modules from '~/routes'
+import cors from 'cors'
+
 
 server.use(express.json())
+server.use(cors())
 
 mongoose.connect(String(process.env.MONGODB_URI)).then(() => {
     console.log('connecting to database successful')
