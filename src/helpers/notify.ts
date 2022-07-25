@@ -33,9 +33,9 @@ const notify = async({user, key, values, args = {}, service, locale = 'en-US'}: 
               subject: i18n.T(locale, `${service}.mail.${key}.subject`)
           }, args, locale)
         } else if(v.type === 'sms') {
-			console.log('Send notificaiton sms')
+			console.log('Send notification sms')
 		} else if(v.type === 'push') {
-			console.log('Send notificaiton push')
+			console.log('Send notification push')
 		}
     })
 }
