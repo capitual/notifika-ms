@@ -10,7 +10,7 @@ interface IMailConfig {
     },
     defaults: {
       from: {
-        email: string;
+        address: string;
         name: string;
       };
     };
@@ -29,7 +29,7 @@ interface IMailConfig {
     },
     defaults: {
       from: {
-        email: 'suporte@capitual.com',
+        address: 'suporte@capitual.com',
         name: 'Capitual',
       },
     },
